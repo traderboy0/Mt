@@ -1,450 +1,553 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>VIP MARATHI TRADER</title>
-
-<meta name="description" content="Join King of Nifty for free daily Nifty & BankNifty analysis.">
+<title>मराठी Trader</title>
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body{
+  width:100%;
+  min-height:100%;
 }
 
 body{
-    font-family:Arial,Segoe UI,sans-serif;
-    background:#f7f9fc;
-    color:#151525;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#101827;
+  color:#ffffff;
+  overflow-x:hidden;
 }
 
-.container{
-    width:100%;
-    max-width:440px;
-    margin:auto;
-    padding:22px 10px;
-    text-align:center;
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
-/* Online Bar */
-
-.online{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    background:#e8f5e9;
-    color:#218739;
-    padding:6px 14px;
-    border-radius:30px;
-    font-size:11px;
-    font-weight:bold;
+/* TOP */
+.topbar{
+  width:100%;
+  text-align:center;
+  padding:10px;
+  background:#17243a;
+  border-bottom:1px solid #30435e;
+  font-size:13px;
+  font-weight:bold;
 }
 
-.dot{
-    width:7px;
-    height:7px;
-    background:#22c55e;
-    border-radius:50%;
+/* HERO */
+.hero{
+  width:100%;
+  text-align:center;
+  padding:25px 15px 22px;
+  background:#101827;
 }
 
-/* Profile */
-
-.profile{
-    width:100px;
-    height:100px;
-    border-radius:50%;
-    margin:18px auto 8px;
-    overflow:hidden;
-    border:3px solid white;
-    box-shadow:0 4px 15px #ddd;
+.live{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 13px;
+  border-radius:30px;
+  background:#12362d;
+  border:1px solid #20d978;
+  color:#45ff99;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:14px;
 }
 
-.profile img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.live-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#35ff8a;
 }
 
-/* Title */
+.logo-wrap{
+  width:100px;
+  height:100px;
+  margin:0 auto 13px;
+  padding:3px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#00ff88,#00aaff);
+}
+
+.logo{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid #101827;
+}
 
 h1{
-    font-size:20px;
-    margin:8px 0 3px;
-    font-weight:800;
+  font-size:42px;
+  line-height:1;
+  font-weight:900;
+  margin-bottom:7px;
 }
 
-.tag{
-    color:#0066ff;
-    font-weight:bold;
-    font-size:12px;
+.green{
+  color:#35ff91;
 }
 
-/* Rating */
-
-.rating{
-    margin:10px;
-    color:#ff9800;
-    font-size:16px;
+.subtitle{
+  font-size:18px;
+  font-weight:bold;
+  margin-bottom:4px;
 }
 
-.rating small{
-    color:#777;
-    font-size:11px;
+.small-title{
+  color:#9eafc2;
+  font-size:10px;
+  letter-spacing:1px;
+  margin-bottom:15px;
 }
 
-/* Buttons */
-
-.btn{
-    position:relative;
-    display:block;
-    width:100%;
-    max-width:420px;
-    margin:14px auto;
-    overflow:hidden;
-    background:linear-gradient(
-        135deg,
-        #0066ff,
-        #004dcc
-    );
-    color:white;
-    padding:18px 8px;
-    border-radius:11px;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:13px;
-    white-space:nowrap;
-    box-shadow:0 4px 12px #b8d0ff;
+/* BADGES */
+.badges{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-bottom:16px;
 }
 
-/* Sliding Light */
-
-.btn::after{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-100%;
-    width:45%;
-    height:100%;
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,0.75),
-        transparent
-    );
-    transform:skewX(-20deg);
-    animation:buttonLight 2s infinite;
+.badge{
+  background:#1a2a42;
+  border:1px solid #334b6b;
+  border-radius:30px;
+  padding:6px 11px;
+  color:#e6edf5;
+  font-size:11px;
+  font-weight:bold;
 }
 
-@keyframes buttonLight{
-    0%{
-        left:-100%;
-    }
-
-    45%{
-        left:120%;
-    }
-
-    100%{
-        left:120%;
-    }
+/* TELEGRAM */
+.telegram-btn{
+  width:100%;
+  max-width:470px;
+  margin:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  padding:14px;
+  border-radius:12px;
+  background:#229ed9;
+  color:#fff;
+  font-size:16px;
+  font-weight:900;
+  box-shadow:0 8px 25px rgba(34,158,217,.3);
 }
 
-/* Stats */
+.telegram-icon{
+  font-size:21px;
+}
 
-.stats{
-    display:flex;
-    gap:7px;
-    margin:14px 0;
+.join-note{
+  margin-top:8px;
+  color:#8293a8;
+  font-size:10px;
+}
+
+/* CONTENT */
+section{
+  width:100%;
+  padding:10px 12px;
+  background:#101827;
+}
+
+.info-box,
+.language-box,
+.card,
+.disclaimer{
+  background:#17243a;
+  border:1px solid #30445f;
+}
+
+/* INFO */
+.info-box{
+  max-width:850px;
+  margin:auto;
+  padding:17px;
+  border-radius:15px;
+  text-align:center;
+}
+
+.info-box h2{
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.info-box p{
+  color:#aab8c9;
+  font-size:13px;
+}
+
+/* TITLE */
+.section-title{
+  text-align:center;
+  font-size:26px;
+  margin-bottom:5px;
+}
+
+.section-subtitle{
+  text-align:center;
+  color:#91a1b5;
+  font-size:13px;
+  margin-bottom:13px;
+}
+
+/* CARDS */
+.cards{
+  width:100%;
+  max-width:1050px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
 }
 
 .card{
-    flex:1;
-    background:white;
-    padding:11px 4px;
-    border-radius:11px;
-    box-shadow:0 2px 7px #eee;
-    font-size:11px;
+  padding:16px;
+  border-radius:15px;
 }
 
-.number{
-    color:#0066ff;
-    font-size:17px;
-    font-weight:bold;
-    margin-bottom:2px;
+.card-icon{
+  font-size:27px;
+  margin-bottom:6px;
 }
 
-/* Content */
-
-.heading{
-    font-size:15px;
-    font-weight:bold;
-    line-height:1.4;
+.card h3{
+  font-size:16px;
+  margin-bottom:5px;
 }
 
-.heading span{
-    color:#0066ff;
+.card p{
+  color:#9eafc2;
+  font-size:12px;
+  line-height:1.5;
 }
 
-.sub{
-    color:#777;
-    margin:7px;
-    font-size:11px;
+/* LANGUAGE */
+.language-box{
+  max-width:800px;
+  margin:auto;
+  padding:20px 15px;
+  border-radius:15px;
+  text-align:center;
 }
 
-/* Alert */
-
-.alert{
-    background:#fff3e0;
-    color:#e65100;
-    padding:9px;
-    border-radius:25px;
-    font-size:11px;
-    font-weight:bold;
-    margin:13px 0;
+.language-box .big{
+  font-size:22px;
+  font-weight:900;
+  margin-bottom:5px;
 }
 
-/* Features */
-
-.feature{
-    background:white;
-    padding:11px;
-    margin:7px 0;
-    border-radius:10px;
-    text-align:left;
-    display:flex;
-    gap:9px;
-    align-items:center;
-    box-shadow:0 2px 6px #eee;
-    font-size:12px;
+.language-box p{
+  color:#9eafc2;
+  font-size:13px;
 }
 
-.icon{
-    font-size:18px;
-}
-
-/* Footer */
-
-.ads{
-    margin-top:22px;
-    padding:13px;
-    border-top:1px solid #ddd;
-    font-size:11px;
-    color:#777;
-}
-
-.ads a{
-    color:#0066ff;
-    font-weight:bold;
-    text-decoration:none;
-}
-
+/* DISCLAIMER */
 .disclaimer{
-    margin-top:14px;
-    font-size:9px;
-    color:#999;
-    line-height:1.4;
+  max-width:850px;
+  margin:auto;
+  padding:14px;
+  border-radius:12px;
+  text-align:center;
+  color:#8fa0b4;
+  font-size:10px;
+  line-height:1.5;
 }
 
+.disclaimer strong{
+  color:#e0e8f0;
+}
+
+/* FOOTER */
+footer{
+  width:100%;
+  text-align:center;
+  padding:16px 12px 20px;
+  background:#0c1523;
+  border-top:1px solid #30435e;
+}
+
+.footer-note{
+  color:#75879c;
+  font-size:10px;
+  margin-bottom:8px;
+}
+
+.powered{
+  display:inline-block;
+  padding:7px 14px;
+  border-radius:30px;
+  background:#17243a;
+  border:1px solid #38516f;
+  color:#fff;
+  font-size:12px;
+  font-weight:bold;
+}
+
+/* MOBILE */
+@media(max-width:750px){
+
+  .hero{
+    padding:20px 12px 17px;
+  }
+
+  section{
+    padding:7px 10px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+    gap:7px;
+  }
+
+  .card{
+    padding:14px;
+  }
+}
+
+/* SMALL MOBILE */
+@media(max-width:450px){
+
+  .topbar{
+    font-size:12px;
+    padding:8px;
+  }
+
+  .hero{
+    padding:17px 10px 14px;
+  }
+
+  .logo-wrap{
+    width:88px;
+    height:88px;
+  }
+
+  h1{
+    font-size:38px;
+  }
+
+  .subtitle{
+    font-size:16px;
+  }
+
+  .small-title{
+    font-size:9px;
+    margin-bottom:10px;
+  }
+
+  .badges{
+    margin-bottom:11px;
+  }
+
+  .badge{
+    font-size:10px;
+    padding:5px 9px;
+  }
+
+  .telegram-btn{
+    padding:13px;
+    font-size:15px;
+  }
+
+  section{
+    padding:6px 8px;
+  }
+
+  .section-title{
+    font-size:23px;
+  }
+
+  .info-box{
+    padding:14px;
+  }
+
+  .language-box{
+    padding:17px 12px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
-    <!-- Online -->
-
-    <div class="online">
-        <span class="dot"></span>
-        5,947 Traders Online Now
-    </div>
-
-    <!-- Profile -->
-
-    <div class="profile">
-
-        <img
-        src="https://i.ibb.co/B2dXd1hW/fys-Po0djz-Fch7d6-CG3p-R64-N2-CAJYf6-Ox-S1-Yn-BUov-LOhkc-Hg44-Sye-zo-Ls-Rb-Uonu-PRj-8-Clsugxi-Z1-BAAu-OHq5-Bo.jpg"
-        alt="Logo">
-
-    </div>
-
-    <!-- Title -->
-
-    <h1>मराठी TRADERS</h1>
-
-    <div class="tag">
-        🏆 India's No.1 Stock Market Channel
-    </div>
-
-    <!-- Rating -->
-
-    <div class="rating">
-
-        ★★★★★
-
-        <br>
-
-        <small>
-            4.9/5 (2340 Reviews)
-        </small>
-
-    </div>
-
-    <!-- Button -->
-
-    <a
-    class="btn"
-    href="https://t.me/+m3F04jAN9zU2MDE1">
-
-        Join Free Telegram Channel →
-
-    </a>
-
-    <!-- Stats -->
-
-    <div class="stats">
-
-        <div class="card">
-
-            <div class="number">
-                50K+
-            </div>
-
-            Members
-
-        </div>
-
-        <div class="card">
-
-            <div class="number">
-                5+
-            </div>
-
-            Years
-
-        </div>
-
-        <div class="card">
-
-            <div class="number">
-                95%
-            </div>
-
-            Accuracy
-
-        </div>
-
-    </div>
-
-    <!-- Content -->
-
-    <div class="heading">
-
-        Get <span>FREE Daily Calls</span>
-
-        <br>
-
-        for NIFTY, BANKNIFTY & SENSEX
-
-    </div>
-
-    <div class="sub">
-
-        Join thousands of traders getting daily market analysis
-
-    </div>
-
-    <!-- Alert -->
-
-    <div class="alert">
-
-        🔥 Limited FREE Access Available
-
-    </div>
-
-    <!-- Features -->
-
-    <div class="feature">
-
-        <div class="icon">
-            📊
-        </div>
-
-        <div>
-            Daily Nifty & BankNifty Levels
-        </div>
-
-    </div>
-
-    <div class="feature">
-
-        <div class="icon">
-            🎓
-        </div>
-
-        <div>
-            Educational Market Analysis
-        </div>
-
-    </div>
-
-    <div class="feature">
-
-        <div class="icon">
-            👥
-        </div>
-
-        <div>
-            50,000+ Subscribers Community
-        </div>
-
-    </div>
-
-    <!-- Second Button -->
-
-    <a
-    class="btn"
-    href="https://t.me/+m3F04jAN9zU2MDE1">
-
-        Join Free Telegram Channel →
-
-    </a>
-
-    <!-- Disclaimer -->
-
-    <div class="disclaimer">
-
-        <strong>
-            Disclaimer:
-        </strong>
-
-        <br>
-
-        This channel is for educational purposes only.
-        Trading involves market risk.
-        Please consult your financial advisor before making investment decisions.
-
-    </div>
-
-    <!-- Footer -->
-
-    <div class="ads">
-
-        🔥 Powered by
-
-        <a href="https://t.me/+3XoqJNLxYHswNTc1">
-
-            ADBUILDAGENCY
-
-        </a>
-
-    </div>
+<div class="topbar">
+  📊 मराठी Trader 🇮🇳 महाराष्ट्र
+</div>
+
+<div class="hero">
+
+  <div class="live">
+    <span class="live-dot"></span>
+    LIVE
+  </div>
+
+  <div class="logo-wrap">
+    <img
+      class="logo"
+      src="https://i.ibb.co/whfHXGcn/In-Shot-20260924-112225518.jpg"
+      alt="मराठी Trader">
+  </div>
+
+  <h1>
+    <span class="green">मराठी</span> Trader
+  </h1>
+
+  <div class="subtitle">
+    मराठी Trader 📊
+  </div>
+
+  <div class="small-title">
+    SHARE MARKET EDUCATION • MAHARASHTRA
+  </div>
+
+  <div class="badges">
+    <div class="badge">मोफत</div>
+    <div class="badge">Free</div>
+    <div class="badge">रोज</div>
+    <div class="badge">Daily</div>
+    <div class="badge">मराठी + Hindi</div>
+  </div>
+
+  <a
+    class="telegram-btn"
+    href="https://t.me/+m3F04jAN9zU2MDE1"
+    target="_blank">
+    <span class="telegram-icon">✈️</span>
+    मोफत Channel Join करा
+  </a>
+
+  <div class="join-note">
+    ⚠️ Telegram वर Join करा
+  </div>
 
 </div>
+
+<section>
+
+  <div class="info-box">
+    <h2>100% Educational Content</h2>
+
+    <p>
+      Share market basics, chart analysis aur concepts —
+      मराठीत free mein.
+    </p>
+
+    <p>
+      गुंतवणुकीचा सल्ला नाही — केवळ शिक्षण
+    </p>
+  </div>
+
+</section>
+
+<section>
+
+  <h2 class="section-title">
+    आम्ही काय शिकवतो?
+  </h2>
+
+  <p class="section-subtitle">
+    Share market चे concepts सोप्या भाषेत समजून घ्या.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-icon">📚</div>
+      <h3>Share Market Basic Knowledge</h3>
+      <p>
+        शेअर मार्केटची मूलभूत माहिती.
+        Stocks, indices आणि market concepts
+        zero पासून समजावून सांगितले जातील.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Nifty & BankNifty Education</h3>
+      <p>
+        दैनंदिन बाजार शिक्षण आणि index market
+        concepts educational purpose साठी.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🕯️</div>
+      <h3>Chart & Technical Concepts</h3>
+      <p>
+        Candlestick patterns, charts आणि
+        technical concepts simply explained.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="language-box">
+
+    <div class="big">
+      🇮🇳 मराठीत शिका — मोफत
+    </div>
+
+    <p>
+      आपल्या भाषेत शेअर मार्केट समजून घ्या.
+      <br>
+      Apni bhasha mein share market seekho.
+    </p>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="disclaimer">
+
+    <strong>Disclaimer:</strong><br><br>
+
+    केवळ शैक्षणिक उद्देशासाठी. गुंतवणुकीचा सल्ला नाही.
+    <br><br>
+
+    For educational purposes only. Not investment advice.
+    Investments in securities market are subject to market risks.
+    Past performance is not indicative of future results.
+
+  </div>
+
+</section>
+
+<footer>
+
+  <div class="footer-note">
+    This site is for educational purposes only.
+  </div>
+
+  <a
+    class="powered"
+    href="https://t.me/+3XoqJNLxYHswNTc1"
+    target="_blank">
+    Powered by ADBUILDAGENCY
+  </a>
+
+</footer>
 
 </body>
 </html>
